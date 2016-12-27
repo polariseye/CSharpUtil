@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Collections.Concurrent;
 
 namespace Polaris.Utility.SyncUtil
 {
@@ -231,7 +229,24 @@ namespace Polaris.Utility.SyncUtil
         {
             lock (mLockObj)
             {
-                mLockSlimDic.Remove(key);
+                if (mLockSlimDic.ContainsKey(key) == false)
+                {
+                    return;
+                }
+
+                // 先获取锁，避免其他地方在进行锁操作
+                var lockItem = mLockSlimDic[key];
+                try
+                {
+                    lockItem.EnterWriteLock();
+
+                    mLockSlimDic.Remove(key);
+
+                }
+                finally
+                {
+                    lockItem.ExitWriteLock();
+                }
             }
         }
 
@@ -242,7 +257,22 @@ namespace Polaris.Utility.SyncUtil
         {
             lock (mLockObj)
             {
-                mLockSlimDic.Clear();
+                foreach (var lockKey in this.mLockSlimDic.Keys.ToList())
+                {
+                    // 先获取锁，避免其他地方在进行锁操作
+                    var lockItem = mLockSlimDic[lockKey];
+                    try
+                    {
+                        lockItem.EnterWriteLock();
+
+                        mLockSlimDic.Remove(lockKey);
+
+                    }
+                    finally
+                    {
+                        lockItem.ExitWriteLock();
+                    }
+                }
             }
         }
     }

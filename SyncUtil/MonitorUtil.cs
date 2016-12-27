@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Linq;
 
 namespace Polaris.Utility.SyncUtil
 {
@@ -138,7 +139,17 @@ namespace Polaris.Utility.SyncUtil
         {
             lock (mLockObj)
             {
-                mLockInfoDic.Remove(key);
+                if (mLockInfoDic.ContainsKey(key))
+                {
+                    return;
+                }
+
+                // 先锁住对应的锁，避免锁还在使用过程中就删除导致出现死锁的情况
+                var lockItem = mLockInfoDic[key];
+                lock (lockItem)
+                {
+                    mLockInfoDic.Remove(key);
+                }
             }
         }
 
@@ -149,7 +160,15 @@ namespace Polaris.Utility.SyncUtil
         {
             lock (mLockObj)
             {
-                mLockInfoDic.Clear();
+                foreach (var lockKey in this.mLockInfoDic.Keys.ToList())
+                {
+                    // 先锁住对应的锁，避免锁还在使用过程中就删除导致出现死锁的情况
+                    var lockItem = mLockInfoDic[lockKey];
+                    lock (lockItem)
+                    {
+                        mLockInfoDic.Remove(lockKey);
+                    }
+                }
             }
         }
     }
