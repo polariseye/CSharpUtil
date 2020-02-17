@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    public class MysqlTableInfo
+    public class TableInfo
     {
         /// <summary>
         /// 表名

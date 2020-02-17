@@ -21,19 +21,19 @@
         /// <summary>
         /// 表数据
         /// </summary>
-        public Dictionary<String, MysqlTableInfo> TableData { get; private set; }
+        public Dictionary<String, TableInfo> TableData { get; private set; }
 
         /// <summary>
         /// 构造函数
         /// </summary>
-        public DbInfo(String dbName, String connectionString, Dictionary<String, MysqlTableInfo> tableData)
+        public DbInfo(String dbName, String connectionString, Dictionary<String, TableInfo> tableData)
         {
             this.DbName = dbName;
             this.ConnectionString = connectionString;
             this.TableData = tableData;
         }
 
-        public MysqlTableInfo GetTable(String tableName, Boolean ifTriggerException = true)
+        public TableInfo GetTable(String tableName, Boolean ifTriggerException = true)
         {
             if (this.TableData.ContainsKey(tableName) == false)
             {
@@ -50,7 +50,7 @@
 
         public static DbInfo GetDbInfo(String connectionString)
         {
-            Dictionary<String, MysqlTableInfo> tableData = new Dictionary<string, MysqlTableInfo>();
+            Dictionary<String, TableInfo> tableData = new Dictionary<string, TableInfo>();
 
             var dbName = "";
             using (var conn = new MySqlConnection(connectionString))
@@ -61,7 +61,7 @@
                 foreach (var tableName in tableList)
                 {
                     var fieldList = GetColList(conn, tableName);
-                    tableData[tableName] = new MysqlTableInfo() { TableName = tableName, FieldList = fieldList };
+                    tableData[tableName] = new TableInfo() { TableName = tableName, FieldList = fieldList };
                 }
                 dbName = conn.Database;
             }
