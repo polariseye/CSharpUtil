@@ -37,6 +37,9 @@
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.6.9.12\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -56,6 +59,9 @@
     <Compile Include="CommandLine\CommandExecutor.cs" />
     <Compile Include="CommandLine\CommandModel.cs" />
     <Compile Include="CommandLine\CommandOption.cs" />
+    <Compile Include="Mysql\DbInfo.cs" />
+    <Compile Include="Mysql\FieldInfo.cs" />
+    <Compile Include="Mysql\TableInfo.cs" />
     <Compile Include="Time\DateTimeExtend.cs" />
     <Compile Include="File\FileIconUtility.cs" />
     <Compile Include="Http\DownloadFileUtil.cs" />
@@ -114,6 +120,7 @@
     <Content Include="CommandLine\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
