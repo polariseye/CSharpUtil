@@ -95,7 +95,6 @@
             }
         }
 
-
         public static void Fatal(String data, Exception exception)
         {
             if (exception != null)
