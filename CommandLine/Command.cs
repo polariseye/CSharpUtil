@@ -1,10 +1,9 @@
 // Copyright (c) Microsoft Open Technologies, Inc. All rights reserved. See License.txt in the project root for license information.
-
-using System;
-using System.Collections.Generic;
-
 namespace Polaris.Utility.CommandLine
 {
+    using System;
+    using System.Collections.Generic;
+
     public class Command
     {
         private readonly IDictionary<Type, object> _properties = new Dictionary<Type, object>();

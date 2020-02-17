@@ -1,10 +1,11 @@
 ﻿// Copyright (c) Microsoft Open Technologies, Inc. All rights reserved. See License.txt in the project root for license information.
 
-using System;
-using System.Runtime.Serialization;
 
 namespace Polaris.Utility.CommandLine
 {
+    using System;
+    using System.Runtime.Serialization;
+
     [Serializable]
     public class CommandException : Exception
     {

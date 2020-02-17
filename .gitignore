@@ -1,0 +1,9 @@
+﻿.vs
+*.user
+*.xml
+[Bb]in/
+[Oo]bj/
+packages/
+build/*
+*/[Bb]in/
+*/[Oo]bj/

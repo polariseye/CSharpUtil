@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Net.Mail;
-
-namespace Polaris.Utility.MailUtil
+﻿namespace Polaris.Utility.Mail
 {
+    using System.Collections.Generic;
+    using System.Net.Mail;
+
     /// <summary>
     /// 邮件发送接口
     /// </summary>

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Net;
-using System.Net.Mail;
-using System.Text.RegularExpressions;
-
-namespace Polaris.Utility.MailUtil
+﻿namespace Polaris.Utility.Mail
 {
+    using System;
+    using System.Net;
+    using System.Net.Mail;
+    using System.Text.RegularExpressions;
+
     /// <summary>
     /// 邮件发送配置对象
     /// </summary>
