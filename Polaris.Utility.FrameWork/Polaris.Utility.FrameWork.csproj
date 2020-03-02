@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Polaris.Utility</RootNamespace>
-    <AssemblyName>Polaris.Windows.Utility</AssemblyName>
+    <AssemblyName>Polaris.Utility.FrameWork</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -34,11 +34,24 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.10.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.10.9\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,8 +66,6 @@
     <Compile Include="Security\DesUtility.cs" />
     <Compile Include="WinForm\PixelUtil.cs" />
     <Compile Include="Wpf\Convertor\EnumDescConvertor.cs" />
-    <Compile Include="Win32Api\User32Api.cs" />
-    <Compile Include="Win32Api\Kernel32Api.cs" />
     <Compile Include="Wpf\AdornerContainer.cs" />
     <Compile Include="Wpf\AnimationHelper.cs" />
     <Compile Include="Wpf\ColorHelper.cs" />
@@ -86,13 +97,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Polaris.Core.Utility\Polaris.Core.Utility.csproj">
-      <Project>{3d95ccda-271a-45da-9db2-22d05bd053ee}</Project>
-      <Name>Polaris.Core.Utility</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <Import Project="..\Polaris.Utility.Share\Polaris.Utility.Share.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -3,24 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polaris.Windows.Utility", "Polaris.Windows.Utility\Polaris.Windows.Utility.csproj", "{971B5A18-F063-494D-BA6B-4C707C99F5BB}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Polaris.Utility.Share", "Polaris.Utility.Share\Polaris.Utility.Share.shproj", "{CFB686EC-3D5B-4E33-94A0-C8693900B092}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polaris.Core.Utility", "Polaris.Core.Utility\Polaris.Core.Utility.csproj", "{3D95CCDA-271A-45DA-9DB2-22D05BD053EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polaris.Utility.NetCore", "Polaris.Utility.NetCore\Polaris.Utility.NetCore.csproj", "{E43709F5-8C12-46BD-856D-6A6B2B51AB19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polaris.Utility.FrameWork", "Polaris.Utility.FrameWork\Polaris.Utility.FrameWork.csproj", "{971B5A18-F063-494D-BA6B-4C707C99F5BB}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Polaris.Utility.Share\Polaris.Utility.Share.projitems*{971b5a18-f063-494d-ba6b-4c707c99f5bb}*SharedItemsImports = 4
+		Polaris.Utility.Share\Polaris.Utility.Share.projitems*{cfb686ec-3d5b-4e33-94a0-c8693900b092}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E43709F5-8C12-46BD-856D-6A6B2B51AB19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E43709F5-8C12-46BD-856D-6A6B2B51AB19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E43709F5-8C12-46BD-856D-6A6B2B51AB19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E43709F5-8C12-46BD-856D-6A6B2B51AB19}.Release|Any CPU.Build.0 = Release|Any CPU
 		{971B5A18-F063-494D-BA6B-4C707C99F5BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{971B5A18-F063-494D-BA6B-4C707C99F5BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{971B5A18-F063-494D-BA6B-4C707C99F5BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{971B5A18-F063-494D-BA6B-4C707C99F5BB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3D95CCDA-271A-45DA-9DB2-22D05BD053EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D95CCDA-271A-45DA-9DB2-22D05BD053EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D95CCDA-271A-45DA-9DB2-22D05BD053EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D95CCDA-271A-45DA-9DB2-22D05BD053EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

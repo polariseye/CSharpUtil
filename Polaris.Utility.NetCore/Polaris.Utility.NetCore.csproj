@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Polaris.Utility</RootNamespace>
+    <AssemblyName>Polaris.Utility.NetCore</AssemblyName>
+  </PropertyGroup>
+
+  <Import Project="..\Polaris.Utility.Share\Polaris.Utility.Share.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="MySql.Data" Version="6.10.9" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>cfb686ec-3d5b-4e33-94a0-c8693900b092</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Polaris.Utility.Share</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Cache\MemoryCacheUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandLine\Command.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandLine\CommandException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandLine\CommandExecutor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandLine\CommandModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandLine\CommandOption.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Http\DownloadFileUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Log\LogUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mail\IMailSender.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mail\MailSender.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mail\SmtpConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mysql\DbInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mysql\FieldInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mysql\TableInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Reflect\AttributeReflectUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)String\EmojiFilger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)String\EnumUtility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\MonitorUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ReaderWriterLockUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sync\ReadWriteLockCollectionUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Time\DateTimeExtend.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validate\ValidateHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Win32Api\Kernel32Api.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Win32Api\User32Api.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)CommandLine\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CommandLine\Sample.txt" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Sync\Sample.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Polaris.Core.Utility.xml" />
+  </ItemGroup>
+</Project>
