@@ -6,6 +6,11 @@
     <AssemblyName>Polaris.Utility.NetCore</AssemblyName>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>E:\Code\TestCode\csharp\工具类\CSharpUtil\Polaris.Utility.NetCore\Polaris.Utility.NetCore.xml</DocumentationFile>
+    <OutputPath />
+  </PropertyGroup>
+
   <Import Project="..\Polaris.Utility.Share\Polaris.Utility.Share.projitems" Label="Shared" />
 
   <ItemGroup>
