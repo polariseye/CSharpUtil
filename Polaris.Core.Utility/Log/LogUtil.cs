@@ -4,11 +4,15 @@
     using log4net.Appender;
     using log4net.Core;
     using log4net.Layout;
+    using log4net.Repository;
     using System;
     using static log4net.Appender.FileAppender;
 
     public class LogUtil
     {
+        const String REPOSITORY_NAME = "LogUtil";
+        static ILoggerRepository mRepository = LogManager.CreateRepository(REPOSITORY_NAME);
+
         static LogUtil()
         {
         }
@@ -30,7 +34,7 @@
 
             //appender.AddFilter(new log4net.Filter.LevelRangeFilter() { LevelMin = Level.Error, LevelMax = Level.Fatal });
 
-            log4net.Config.BasicConfigurator.Configure(appender);
+            log4net.Config.BasicConfigurator.Configure(mRepository, appender);
         }
 
         public static void AddConsoleAppender()
@@ -39,12 +43,12 @@
             consoleAppender.Name = "consoleLog";
             consoleAppender.Layout = new PatternLayout("%date{yyyy-MM-dd HH:mm:ss} [%thread] %level - %message%newline");
             consoleAppender.ActivateOptions();
-            log4net.Config.BasicConfigurator.Configure(consoleAppender);
+            log4net.Config.BasicConfigurator.Configure(mRepository, consoleAppender);
         }
 
         private static ILog GetLog()
         {
-            return log4net.LogManager.GetLogger("fileLog");
+            return log4net.LogManager.GetLogger(REPOSITORY_NAME, "fileLog");
         }
 
         public static void Debug(String data, Exception exception)

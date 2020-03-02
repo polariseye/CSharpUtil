@@ -1,4 +1,4 @@
-﻿namespace Polaris.Utility.Validate
+﻿namespace Polaris.Utility
 {
     /// <summary>
     ///     验证帮助类

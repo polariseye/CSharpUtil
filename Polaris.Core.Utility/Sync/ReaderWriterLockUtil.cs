@@ -1,8 +1,8 @@
-﻿namespace Polaris.Utility.SyncUtil
+﻿namespace Polaris.Utility
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
+    using System.Text;
     using System.Threading;
 
     /// <summary>
@@ -10,6 +10,11 @@
     /// </summary>
     public class ReaderWriterLockUtil
     {
+        /// <summary>
+        /// 锁原始对象
+        /// </summary>
+        public ReaderWriterLockSlim LockObj { get; set; } = new ReaderWriterLockSlim();
+
         /// <summary>
         /// 锁类型枚举
         /// </summary>
@@ -83,42 +88,15 @@
         private Object mLockObj = new Object();
 
         /// <summary>
-        /// 锁集合
-        /// </summary>
-        private Dictionary<String, ReaderWriterLockSlim> mLockSlimDic = new Dictionary<String, ReaderWriterLockSlim>();
-
-        /// <summary>
-        /// 获取锁对象信息
-        /// </summary>
-        /// <param name="key">锁的唯一标识</param>
-        /// <returns>返回锁对象</returns>
-        private ReaderWriterLockSlim GetLockSlim(String key)
-        {
-            lock (mLockObj)
-            {
-                if (!mLockSlimDic.ContainsKey(key))
-                {
-                    // 如果获取不到锁，则创建一个锁对象
-                    ReaderWriterLockSlim lockObj = new ReaderWriterLockSlim();
-                    mLockSlimDic[key] = lockObj;
-
-                    return lockObj;
-                }
-
-                return mLockSlimDic[key];
-            }
-        }
-
-        /// <summary>
         /// 获取锁对象，获取过程会死等。直到获取到锁对象
         /// </summary>
         /// <param name="key">锁的唯一标识</param>
         /// <param name="lockType">锁类型</param>
         /// <returns>返回锁对象</returns>
-        private IDisposable GetLockSlimByInfiniteWait(String key, LockTypeEnum lockType)
+        private IDisposable GetLockSlimByInfiniteWait(LockTypeEnum lockType)
         {
             // 获取锁对象
-            ReaderWriterLockSlim lockObj = GetLockSlim(key);
+            ReaderWriterLockSlim lockObj = this.LockObj;
 
             // 进入锁
             switch (lockType)
@@ -158,7 +136,6 @@
         /// <summary>
         /// 获取锁对象
         /// </summary>
-        /// <param name="key">锁的唯一标识</param>
         /// <param name="lockType">锁类型</param>
         /// <param name="millisecondsTimeout">等待的毫秒数；&lt;=0表示无限期等待。</param>
         /// <returns>返回锁对象</returns>
@@ -175,16 +152,16 @@
         /// }
         /// </code>
         /// </remarks>
-        public IDisposable GetLock(String key, LockTypeEnum lockType, Int32 millisecondsTimeout = 100)
+        public IDisposable GetLock(LockTypeEnum lockType, Int32 millisecondsTimeout = 100)
         {
             // 判断是否为无限期等待
             if (millisecondsTimeout <= 0)
             {
-                return GetLockSlimByInfiniteWait(key, lockType);
+                return GetLockSlimByInfiniteWait(lockType);
             }
 
             // 获取锁对象
-            ReaderWriterLockSlim lockSlimObj = GetLockSlim(key);
+            ReaderWriterLockSlim lockSlimObj = this.LockObj;
 
             // 进入锁
             switch (lockType)
@@ -219,61 +196,6 @@
             }
 
             return null;
-        }
-
-        /// <summary>
-        /// 主动释放锁资源，避免长久驻留内存
-        /// </summary>
-        /// <param name="key">锁的唯一标识</param>
-        public void DisposeLock(String key)
-        {
-            lock (mLockObj)
-            {
-                if (mLockSlimDic.ContainsKey(key) == false)
-                {
-                    return;
-                }
-
-                // 先获取锁，避免其他地方在进行锁操作
-                var lockItem = mLockSlimDic[key];
-                try
-                {
-                    lockItem.EnterWriteLock();
-
-                    mLockSlimDic.Remove(key);
-
-                }
-                finally
-                {
-                    lockItem.ExitWriteLock();
-                }
-            }
-        }
-
-        /// <summary>
-        /// 主动清空所有锁资源，避免长久驻留内存
-        /// </summary>
-        public void DisposeAllLock()
-        {
-            lock (mLockObj)
-            {
-                foreach (var lockKey in this.mLockSlimDic.Keys.ToList())
-                {
-                    // 先获取锁，避免其他地方在进行锁操作
-                    var lockItem = mLockSlimDic[lockKey];
-                    try
-                    {
-                        lockItem.EnterWriteLock();
-
-                        mLockSlimDic.Remove(lockKey);
-
-                    }
-                    finally
-                    {
-                        lockItem.ExitWriteLock();
-                    }
-                }
-            }
         }
     }
 }

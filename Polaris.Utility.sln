@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polaris.Utility", "Polaris.Utility.csproj", "{971B5A18-F063-494D-BA6B-4C707C99F5BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polaris.Windows.Utility", "Polaris.Windows.Utility\Polaris.Windows.Utility.csproj", "{971B5A18-F063-494D-BA6B-4C707C99F5BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polaris.Core.Utility", "Polaris.Core.Utility\Polaris.Core.Utility.csproj", "{3D95CCDA-271A-45DA-9DB2-22D05BD053EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{971B5A18-F063-494D-BA6B-4C707C99F5BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{971B5A18-F063-494D-BA6B-4C707C99F5BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{971B5A18-F063-494D-BA6B-4C707C99F5BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D95CCDA-271A-45DA-9DB2-22D05BD053EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D95CCDA-271A-45DA-9DB2-22D05BD053EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D95CCDA-271A-45DA-9DB2-22D05BD053EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D95CCDA-271A-45DA-9DB2-22D05BD053EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4A49F34-B19E-4B04-A7DB-A97477C63BDA}
 	EndGlobalSection
 EndGlobal

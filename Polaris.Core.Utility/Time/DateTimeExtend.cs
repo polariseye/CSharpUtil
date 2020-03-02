@@ -1,4 +1,4 @@
-﻿namespace Polaris.Utility.Time
+﻿namespace Polaris.Utility
 {
     using System;
 

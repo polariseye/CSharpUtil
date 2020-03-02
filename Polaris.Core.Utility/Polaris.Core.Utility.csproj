@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
+    <RootNamespace>Polaris.Utility</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <DocumentationFile>E:\Code\TestCode\csharp\工具类\CSharpUtil\Polaris.Core.Utility\Polaris.Core.Utility.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="CommandLine\ReadMe.txt" />
+    <None Remove="CommandLine\Sample.txt" />
+    <None Remove="Sync\Sample.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="CommandLine\ReadMe.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="CommandLine\Sample.txt" />
+    <EmbeddedResource Include="Sync\Sample.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="MySql.Data" Version="6.10.9" />
+  </ItemGroup>
+
+</Project>

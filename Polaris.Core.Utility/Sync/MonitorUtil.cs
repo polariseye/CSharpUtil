@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Linq;
 
-namespace Polaris.Utility.SyncUtil
+namespace Polaris.Utility
 {
     /// <summary>
     /// 排他锁工具类
