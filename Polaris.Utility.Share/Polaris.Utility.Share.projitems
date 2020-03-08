@@ -9,7 +9,7 @@
     <Import_RootNamespace>Polaris.Utility.Share</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Cache\MemoryCacheUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cache\RedisUtil.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CommandLine\Command.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CommandLine\CommandException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CommandLine\CommandExecutor.cs" />
@@ -23,7 +23,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Mysql\DbInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Mysql\FieldInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Mysql\TableInfo.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Reflect\AttributeReflectUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Reflect\ReflectUtil.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)String\EmojiFilger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)String\EnumUtility.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sync\MonitorUtil.cs" />
