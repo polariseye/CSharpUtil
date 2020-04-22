@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.ComponentModel;
 
-    public class EnumUtility
+    public class EnumDescUtility
     {
         static Dictionary<Type, Dictionary<Int32, String>> codeDescriptionData = new Dictionary<Type, Dictionary<Int32, String>>();
         static Object lockObj = new object();

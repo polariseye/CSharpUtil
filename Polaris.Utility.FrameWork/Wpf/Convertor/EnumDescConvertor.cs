@@ -18,7 +18,7 @@
         {
             if (value is Enum)
             {
-                return EnumUtility.GetDescription(value.GetType(), (Int32)(value));
+                return EnumDescUtility.GetDescription(value.GetType(), (Int32)(value));
             }
 
             return value == null ? "" : value.ToString();
