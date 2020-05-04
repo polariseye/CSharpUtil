@@ -41,7 +41,7 @@
             return enumData;
         }
 
-        public static Dictionary<Int32, T> GetEnumData<T>(Type enumType, Type attributeType)
+        public static Dictionary<Int32, T> GetEnumData<T>(Type enumType)
         {
             Dictionary<Int32, Object> val = null;
             lock (lockObj)

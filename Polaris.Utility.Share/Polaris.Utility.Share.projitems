@@ -17,6 +17,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)CommandLine\CommandOption.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enum\EnumUtility{T}.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Http\DownloadFileUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Json\JsonUtil.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Log\LogUtil.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Mail\IMailSender.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Mail\MailSender.cs" />
@@ -32,6 +33,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sync\ReadWriteLockCollectionUtil.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Time\DateTimeExtend.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Validate\ValidateHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validate\VerifyCodeUtil.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Win32Api\Kernel32Api.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Win32Api\User32Api.cs" />
   </ItemGroup>
