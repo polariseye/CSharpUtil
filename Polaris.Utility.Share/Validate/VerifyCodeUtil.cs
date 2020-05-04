@@ -1,4 +1,4 @@
-﻿namespace Polaris.Utility.Share.Validate
+﻿namespace Polaris.Utility
 {
     using System;
     using System.Collections.Generic;
