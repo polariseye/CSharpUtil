@@ -10,6 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Cache\RedisUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Coding\Base64Utlil.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CommandLine\Command.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CommandLine\CommandException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CommandLine\CommandExecutor.cs" />
