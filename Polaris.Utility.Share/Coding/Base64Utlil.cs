@@ -1,4 +1,4 @@
-﻿namespace Polaris.Utility.Share.Coding
+﻿namespace Polaris.Utility
 {
     using System;
     using System.Collections.Generic;

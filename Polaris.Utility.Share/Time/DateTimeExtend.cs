@@ -21,7 +21,7 @@
         public static DateTime UnixTimeToDateTime(this Int64 now)
         {
             var timeValue = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-            timeValue.AddSeconds(now);
+            timeValue = timeValue.AddSeconds(now);
 
             return timeValue;
         }
