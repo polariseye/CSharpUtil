@@ -18,6 +18,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)CommandLine\CommandOption.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enum\EnumUtility{T}.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Http\DownloadFileUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Http\HtmlUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Http\HttpUtil.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Json\JsonUtil.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Log\LogUtil.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Mail\IMailSender.cs" />
