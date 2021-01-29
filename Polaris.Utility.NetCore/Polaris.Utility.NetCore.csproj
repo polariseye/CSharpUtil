@@ -14,7 +14,7 @@
   <Import Project="..\Polaris.Utility.Share\Polaris.Utility.Share.projitems" Label="Shared" />
 
   <ItemGroup>
-    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="log4net" Version="2.0.10" />
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="3.1.2" />
     <PackageReference Include="MySql.Data" Version="6.10.9" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
